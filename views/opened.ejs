@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div id="main">
+    <div id="nav">
+    <div id="nav-a"><img src="../images/vspng.png" alt=""><h1>File</h1>
+    <h1>Edit</h1>
+    <h1>Selection</h1>
+    <h1>View</h1>
+    <h1>Go</h1>
+    <h1>Run</h1>
+    <h1>Terminal</h1>
+    <h1>Help</h1></div>
+    <div id="nav-b"><h1>file-name-Visual Studio Code</h1></div>
+    <div id="nav-c"></div>
+  </div>
+   <div id="page">
+    <div id="nav2">
+      <div id="upper"><i id="mp" class="ri-file-3-line"></i>
+      <i class="fa-solid fa-code-merge" style="color: #ffffff;"></i>
+    </div>
+    <div id="lower"></div>
+    </div>
+    <div id="left">
+    
+      <div id="fileoption">
+        <h1><i style="font-size: 15px;" id="op-clo" class="ri-arrow-down-s-line"></i> N16</h1>
+        <div id="creat">
+          <i id="filecreat" class="ri-file-add-line"></i>
+          <i id="foldercreat" class="ri-folder-add-line"></i>
+          <a href="/"> <i id="refers" class="ri-refresh-line"></i></a>
+        </div>
+      </div>
+
+    <div id="bla">
+      <form id="filename" action="/creatfile">
+        <i class="ri-align-left"></i> <input type="text" name="filename" placeholder="file name">
+      </form>
+
+      <form id="foldername" action="/creatfolder">
+        <i class="ri-align-left"></i> <input type="text" name="foldername" placeholder="folder name">
+      </form>
+    </div>
+      <% files.forEach(function(val){%> 
+      <div id="elem">
+       <div id="elem-left">
+          <% if(val.isDirectory()){ %>
+            <i class="ri-folder-line"></i>
+              <%= val.name %>
+               <% }else{ %>
+                <a href="/file/<%= val.name %>">
+                  <i class="ri-file-text-line"></i>
+                  <%= val.name  %>
+                </a>
+          <%  } %>
+       </div>
+        <div id="elem-right">
+          <i class="ri-add-line"></i>
+          <% if(val.isDirectory()){ %>
+            <a href="/delete/folder/<%= val.name %>"><i class="ri-delete-bin-7-line"></i></a>
+          <% } else { %>
+            <a href="/delete/file/<%= val.name %>"><i class="ri-delete-bin-7-line"></i></a>
+          <% } %>
+
+        </div>
+      </div>
+     <% }) %>
+    
+    </div>
+    <div id="right">
+        <div class="rnav">
+            <div class="file">
+                <%= filename %> <a href="/"><i class="ri-close-fill"></i></a>
+            </div>
+        </div>
+        <form id="textarea" action="/update/<%=filename %>" method="post">
+            <textarea name="data"  style="resize: none;"><%= filedata %></textarea>
+              <input id="savefile"  type="submit" value="save file">
+        </form>
+    </div>
+   </div>
+  </div>
+
+
+
+  <script>
+   function fileoff(){
+      document.querySelectorAll("form").forEach(function(frm){
+       frm.style.display="none";
+      })
+    }
+ 
+   document.querySelector("#filecreat").addEventListener("click",function(){
+    fileoff()
+     document.querySelector("#filename").style.display="block";
+   })
+
+   document.querySelector("#foldercreat").addEventListener("click",function(){
+    fileoff()
+     document.querySelector("#foldername").style.display="block";
+   })
+   
+   document.querySelector("#refers").addEventListener("click",function(){
+    fileoff()
+   })
+
+  document.querySelectorAll("#elem").forEach(function(elem){
+    var clutter=0;
+    document.querySelector("#op-clo").addEventListener("click",function(){
+    
+    if(clutter==0){
+      elem.style.display="none"
+      clutter=1
+    }else{
+      elem.style.display="block"
+      clutter=0
+    }
+
+    })
+  })
+
+  document.querySelectorAll("#left").forEach(function(elem){
+    var clutter=0;
+    document.querySelector("#mp").addEventListener("click",function(){
+    
+    if(clutter==0){
+      elem.style.display="none"
+      clutter=1
+    }else{
+      elem.style.display="block"
+      clutter=0
+    }
+
+    })
+  })
+   
+  </script>
+</body>
+</html>

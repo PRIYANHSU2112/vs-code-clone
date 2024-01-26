@@ -1,0 +1,264 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  font-family: Gilroy;
+}
+#main{
+  width: 100%;
+  height: 100%;
+  background-color: #232121;
+}
+#nav{
+  position: relative;
+  width: 100%;
+  height: 35px;
+  padding: 20px 10px;
+  background-color:#504f4f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#nav-a{
+  position: relative;
+  display: flex;
+  gap: 7px;
+}
+#nav-a>img{
+  width: 25px;
+}
+#nav-a>h1{
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+   position: relative;
+   padding: 2px 5px;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+#nav-b>h1{
+  color: white;
+  font-size: 13px;
+  font-weight: 400;
+}
+#nav-a>h1:hover{
+  background-color: #323131;
+}
+#page{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+#nav2{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;
+  height: 100%;
+  background-color: #333333;
+  color: white;
+}
+#upper{
+  position: relative;
+}
+#upper>i{
+
+  width: 50px;
+  font-size: 25px;
+  position: relative;
+  top: 10px;
+}
+
+#left{
+  position: relative;
+  width: 18%;
+  height: 100%;
+  background-color: #2a2828;
+  color: white;
+}
+#right{
+  position: relative;
+  background-color: #232121;
+  width: 100%;
+  height: 100%;
+}
+#right>img{
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+filter:opacity(0.1);
+width: 250px;
+
+}
+#fileoption{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  align-items: center;
+  color: white;
+}
+#fileoption>h1{
+  font-size: 12px;
+  gap: 10px;
+}
+#creat{
+  display: flex;
+  gap: 8px;
+}
+#creat>i{
+ font-size: 16px;
+}
+#creat>a{
+  color: white;
+  text-decoration: none;
+}
+#bla>form{
+  margin-top: 5px;
+ display: none;
+}
+#bla>form>input{
+  height: 25px;
+  background-color: #504f4f;
+  border: none;
+  padding: 3px 5px;
+  color: white;
+
+}
+#filename{
+  display: none;
+  width: max-content;
+
+}
+#foldername{
+  display: none;
+  width: max-content;
+ 
+}
+#elem{
+  padding-left: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 100;
+  margin-top: 5px;
+  padding-right: 10px;
+}
+#elem-left>a{
+  color: white;
+  text-decoration: none;
+  outline: none;
+}
+#elem-right{
+  display: none;
+  gap: 3px;
+}
+#elem-right>a{
+  text-decoration: none;
+  color: white;
+
+}
+
+#elem:hover #elem-right{
+display: block;
+}
+.rnav{
+  display: flex;
+  width: 100%;
+  height: 30px;
+  background-color:#323232;
+}
+.file{
+  display: flex;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
+  font-size: 300;
+  justify-content: center;
+  align-items:center;
+  padding: 0px 10px;
+  background-color: #232121;
+
+}
+.file>a{
+ color: white;
+text-decoration: none;
+}
+#textarea{
+  width: 100%;
+    height: 90%;
+  display: flex;
+  height: calc(100%-30px);
+
+}
+textarea{
+  background-color: transparent ;
+  width: 100%;
+  resize: none;
+  border: none;
+   font-family: "Consolas";
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+  color: white;
+  padding: 10px;
+
+}
+textarea:focus{
+  border: none;
+}
+#ffedit{
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  height: max-content;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+}
+#ffedit>h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #2a2828;
+}
+hr{
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+#ffedit input{
+  border: solid gray;
+  outline-color: blue ;
+  padding: 10px 20px;
+  gap: 10px;
+}
+#textarea>input{
+  position: relative;
+  height: 30px;
+  padding: 5px 10px;
+  background-color: #323232;
+  border: none;
+  color: white;
+ 
+}
+
+#textarea>input:hover{
+  background-color: white;
+  color: #232121;
+}
